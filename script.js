@@ -19,8 +19,18 @@ function quadraticEquation() {
     let c = +prompt('Input c coefficient');
     if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
         if (a === 0) {
-            alert('Coefficient a cannot be equal to 0');
-        } else {
+            if (b === 0 && c == 0) {
+                alert('The set of solutions');
+            }
+            if (b == 0 && c !== 0) {
+                alert('No solutions');
+            } else {
+                c = c * -1;
+                let x = c / b;
+                alert(x);
+            }
+        }
+        else {
             let discriminant = b ** 2 - 4 * a * c;
             if (discriminant > 0) {
                 let x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
